@@ -1,0 +1,47 @@
+.header {
+  width: 80vw;
+  height: 56px;
+  margin: auto;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+.header-logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.header-logo img {
+  padding: 1rem;
+  width: 7rem;
+  height: 3rem;
+}
+.toggle-button {
+  /* position: fixed; */
+  padding: 0.25rem;
+  background: transparent;
+  border-color: transparent;
+  animation: bounce 2s ease-in-out infinite;
+}
+.toggle {
+  color: #1b9b7a;
+}
+.toggle-button :hover {
+  transform: rotate(90);
+}
+.header-link {
+  width: 4rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.shop-icon {
+  color: #1b9b7a;
+  cursor: pointer;
+  --fa-animation-duration: 3s;
+}
+.register-icon {
+  color: #1b9b7a;
+  cursor: pointer;
+}

@@ -16,7 +16,7 @@ const productSchema = new mongoose.Schema(
       required: true,
     },
     quantity: {
-      type: Number,
+      type: String,
       require: true,
     },
     description: {
@@ -27,7 +27,7 @@ const productSchema = new mongoose.Schema(
     offer: {
       type: Number,
     },
-    productPicture: [
+    productPictures: [
       {
         img: { type: String },
       },
@@ -40,7 +40,7 @@ const productSchema = new mongoose.Schema(
     ],
     category: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
+      ref: "Category",
       required: true,
     },
     createdBy: {

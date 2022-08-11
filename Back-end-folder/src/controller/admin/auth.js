@@ -1,6 +1,7 @@
 const User = require("../../models/user");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
+const shortid = require("shortid");
 
 exports.signup = (req, res) => {
   User.findOne({ email: req.body.email }).exec(async (error, user) => {
@@ -17,7 +18,7 @@ exports.signup = (req, res) => {
       lastName,
       email,
       hash_password,
-      username: Math.random().toString(),
+      username: shortid.generate(),
       role: "admin",
     });
     _user.save((error, data) => {
@@ -44,11 +45,11 @@ exports.signin = (req, res) => {
           { _id: user._id, role: user.role },
           process.env.JWT_SECRET,
           {
-            expiresIn: "5d",
+            expiresIn: "200d",
           }
         );
         const { _id, firstName, lastName, email, role, fullName } = user;
-        res.cookie("token", token, { expiresIn: "5d" });
+        res.cookie("token", token, { expiresIn: "200d" });
         res.status(200).json({
           token,
           user: {

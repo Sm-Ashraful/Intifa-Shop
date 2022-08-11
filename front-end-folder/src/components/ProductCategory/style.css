@@ -1,0 +1,15 @@
+h1 {
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  text-align: center;
+}
+product-container {
+  display: flex;
+  flex-direction: column;
+}
+.product-list {
+  height: 50vh;
+  background: #1b9b7a;
+}
